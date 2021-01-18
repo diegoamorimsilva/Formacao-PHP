@@ -1,6 +1,6 @@
 <?php
 
-function sacar($conta, $valor){
+function sacar(&$conta, $valor){
 
     if($conta['saldo'] < $valor) {
         echo "Você não pode sacar";
@@ -25,7 +25,7 @@ $conta3 = [
 
 $contas = [$conta1, $conta2, $conta3];
 
-$contas[0] = sacar($contas[0] , 500);
+sacar($contas[0] , 500);
 
 for ($i=0; $i < count($contas) ; $i++) { 
     echo $contas[$i]['titular'];
