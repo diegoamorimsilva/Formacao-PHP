@@ -2,9 +2,9 @@
 
 class Conta
 {
-    public String $cpfTitular;
-    public String $nomeTitular;
-    public float $saldo;
+    private String $cpfTitular;
+    private String $nomeTitular;
+    private float $saldo;
 
     public function sacar(float $valorsaque): void
     {
