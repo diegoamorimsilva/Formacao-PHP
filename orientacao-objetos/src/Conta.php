@@ -10,6 +10,7 @@ class Conta
     {
         $this->cpfTitular = $cpfTitular;
         $this->nomeTitular =  $nomeTitular;
+        $this->validaNomeTitular($nomeTitular);
         $this->saldo = 0;
     }
     public function saca(float $valorASacar): void
@@ -65,5 +66,14 @@ class Conta
     public function recuperaNomeTitular(): string
     {
         return $this->nomeTitular;
+    }
+
+
+    public function validaNomeTitular(string $nome): void
+    {
+        if($nome < 5){
+            echo 'Digite nome e sobrenome';
+            exit();
+        }
     }
 }
