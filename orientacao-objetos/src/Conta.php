@@ -5,6 +5,7 @@ class Conta
     private $cpfTitular;
     private $nomeTitular;
     private $saldo = 0;
+    private static $numeroDeContas = 0;
 
     public function __construct(string $cpfTitular, string $nomeTitular)
     {
@@ -12,6 +13,7 @@ class Conta
         $this->nomeTitular =  $nomeTitular;
         $this->validaNomeTitular($nomeTitular);
         $this->saldo = 0;
+        Conta::$numeroDeContas++;
     }
     public function saca(float $valorASacar): void
     {
@@ -69,11 +71,22 @@ class Conta
     }
 
 
-    public function validaNomeTitular(string $nome): void
+    private function validaNomeTitular(string $nome): void
     {
-        if($nome < 5){
+        if(strlen($nome) < 5){
             echo 'Digite nome e sobrenome';
             exit();
         }
     }
+
+    public static function recuperanumeroDeContas(): int
+    {
+        return self::$numeroDeContas;
+    }
+
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
+    }
+
 }
