@@ -6,7 +6,7 @@ class Conta
     public String $nomeTitular;
     public float $saldo;
 
-    public sacar(float $valorsaque) 
+    public function sacar(float $valorsaque): void
     {
         if($this->saldo < $valorsaque){
             echo "Saldo insuficiente";
@@ -21,6 +21,16 @@ class Conta
             echo "Valor precisa ser positivo";
         } else {
             $this->saldo += $valorADepositar;
+        }
+    }
+
+    public function transferir(float $valorATransferir, Conta $contaDestino): void
+    {
+        if ($valorATransferir > $this->saldo) {
+            echo "Saldo indisponível";
+        } else {
+            $this->sacar($valorATransferir);
+            $contaDestino->depositar($valorATransferir);
         }
     }
 }
