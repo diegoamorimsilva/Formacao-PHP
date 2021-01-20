@@ -3,16 +3,25 @@
 
 class Pessoa
 {
-    private $nome;
+    public $nome;
+    public $cpf;
 
     public function recuperaNome()
     {
         return $this->nome;
     }
 
-    public function recuperaCpf()
+    public function recuperaCpf():CPF
     {
-        return $this->cpf;
+        return $this->cpf->recuperaNumero;
     }
-    private $cpf;
+
+    public function validaNomeTitular(string $nomeTitular)
+    {
+        if (strlen($nomeTitular) < 5) {
+            echo "Nome precisa ter pelo menos 5 caracteres";
+            exit();
+        }
+    }
+
 }
