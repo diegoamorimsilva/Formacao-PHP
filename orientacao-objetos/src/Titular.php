@@ -2,8 +2,8 @@
 
 class Titular
 {
-    private CPF $cpf;
-    private string $nome;
+    private $cpf;
+    private $nome;
 
     public function __construct(CPF $cpf, string $nome)
     {

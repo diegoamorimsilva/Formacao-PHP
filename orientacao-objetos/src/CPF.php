@@ -2,7 +2,7 @@
 
 class CPF
 {
-    private string $numero;
+    private $numero;
 
     public function __construct(string $numero)
     {
@@ -16,7 +16,6 @@ class CPF
             echo "Cpf inválido";
             exit();
         }
-
         $this->numero = $numero;
     }
 
