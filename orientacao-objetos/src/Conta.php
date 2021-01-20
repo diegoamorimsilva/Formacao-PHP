@@ -2,7 +2,7 @@
 
 class Conta
 {
-    private $titular;
+    private Titular $titular;
     private $saldo;
     private static $numeroDeContas = 0;
 
@@ -63,7 +63,8 @@ class Conta
         return self::$numeroDeContas;
     }
 
-    public function recuperaNomeTitular(): string
+// ...
+public function recuperaNomeTitular(): string
 {
     return $this->titular->recuperaNome();
 }
@@ -72,6 +73,7 @@ public function recuperaCpfTitular(): string
 {
     return $this->titular->recuperaCpf();
 }
+// ...
     
     public function __destruct()
     {
