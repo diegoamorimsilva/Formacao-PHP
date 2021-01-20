@@ -1,8 +1,9 @@
 <?php
 
+namespace Alura\Banco\Modelo;
 class CPF
 {
-    public $numero;
+    private $numero;
 
     public function __construct(string $numero)
     {

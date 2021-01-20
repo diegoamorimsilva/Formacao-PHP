@@ -1,14 +1,14 @@
 <?php
+namespace Alura\Banco\Modelo;
 
 class Pessoa
 {
-    protected string $nome;
-    private CPF $cpf;
-
+    protected $nome;
+    private $cpf;
 
     public function __construct(string $nome, CPF $cpf)
     {
-        $this->validaNome($nome);
+        $this->validaNomeTitular($nome);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
@@ -23,9 +23,9 @@ class Pessoa
         return $this->cpf->recuperaNumero();
     }
 
-    protected function validaNome(string $nome)
+    protected function validaNomeTitular(string $nomeTitular)
     {
-        if (strlen($nome) < 5) {
+        if (strlen($nomeTitular) < 5) {
             echo "Nome precisa ter pelo menos 5 caracteres";
             exit();
         }

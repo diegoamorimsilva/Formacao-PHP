@@ -1,5 +1,5 @@
 <?php
-
+namespace Alura\Banco\Modelo;
 
 class Funcionario extends Pessoa
 {
@@ -10,12 +10,13 @@ class Funcionario extends Pessoa
         parent::__construct($nome, $cpf);
         $this->cargo = $cargo;
     }
+
     public function recuperaCargo(): string
     {
         return $this->cargo;
     }
 
-    protected function alteraNome(string $nome):void
+    public function alteraNome(string $nome): void
     {
         $this->validaNomeTitular($nome);
         $this->nome = $nome;
