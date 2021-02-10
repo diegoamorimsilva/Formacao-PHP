@@ -29,7 +29,7 @@ class Buscador
         $html = $resposta->getBody();
         $this->crawler->addHtmlContent($html);
 
-        $elementosCursos = $this->crawler->filter('h3.card-title');
+        $elementosCursos = $this->crawler->filter('span.card-curso__nome');
         $cursos = [];
 
         foreach ($elementosCursos as $elemento) {
