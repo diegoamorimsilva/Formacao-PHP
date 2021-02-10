@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '2eafa18cd893ae35bed879234d7305bc7fb78908',
+    'reference' => '355b12eb7d1a757263f5b0d0795f2dc53efe1c5b',
     'name' => 'cviniciussdias/buscador-cursos',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '2eafa18cd893ae35bed879234d7305bc7fb78908',
+      'reference' => '355b12eb7d1a757263f5b0d0795f2dc53efe1c5b',
     ),
     'guzzlehttp/guzzle' => 
     array (

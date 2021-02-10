@@ -7,13 +7,13 @@ use Alura\BuscadorDeCursos\Buscador;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-$client = new Client(['base_uri' => 'https://www.alura.com.br/']);
+$client = new Client(['base_uri' => 'https://www.vantagensaqui.com.br']);
 $crawler = new Crawler();
 
 $buscardor = new Buscador($client, $crawler);
-$cursos = $buscardor->buscar('/cursos-online-programacao/php');
+$cursos = $buscardor->buscar('/parceiros');
 
 foreach ($cursos as $curso) {
     echo $curso . PHP_EOL;
 }
-phpinfo();
+echo "teste";
